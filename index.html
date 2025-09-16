@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ashish Sharma • DevOps | Farming | Puzzles</title>
+  <meta name="description" content="Ashish Sharma — DevOps engineer, Parashar Vedic Farms founder, and creator of printable logic puzzles for kids. Projects, notes, and downloads." />
+  <meta property="og:title" content="Ashish Sharma • DevOps | Farming | Puzzles" />
+  <meta property="og:description" content="DevOps portfolio, SPNF farming notes, and printable puzzles — all in one place." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#121936; --ink:#eaf2ff; --mute:#9fb2d6; --brand:#0ea5e9; --accent:#22c55e; --ring:#38bdf8;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:linear-gradient(180deg,#0b1020,#0a1126 60%,#0b1020);color:var(--ink)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:rgba(11,16,32,.7);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid rgba(56,189,248,.15);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav a.logo{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.2px}
+    .badge{font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(14,165,233,.18);border:1px solid rgba(56,189,248,.35);color:#bfe7ff}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{font-weight:500;color:var(--mute)}
+    .menu a:hover{color:#d9eaff}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(56,189,248,.35);background:rgba(14,165,233,.12);color:#dff3ff}
+    .btn:hover{border-color:rgba(56,189,248,.65)}
+
+    .hero{padding:72px 0 48px}
+    .hero .wrap{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(56,189,248,.16);border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+    .hero h1{font-size:40px;line-height:1.15;margin:0 0 10px}
+    .hero p{color:var(--mute);font-size:16px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+    .chip{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(34,197,94,.4);background:rgba(34,197,94,.12);color:#d2f8db}
+
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+    section{padding:40px 0}
+    h2{font-size:22px;margin:0 0 14px}
+    .panel{padding:18px;border-radius:14px}
+    .panel h3{margin:0 0 6px;font-size:16px}
+    .panel p{margin:0;color:#b8c7e6;font-size:14px}
+    .tag{display:inline-block;margin-top:10px;font-size:11px;padding:4px 8px;border-radius:8px;border:1px solid rgba(56,189,248,.35);color:#cfeaff}
+
+    .two-col{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+    .list{display:flex;flex-direction:column;gap:12px}
+    .list .item{padding:14px;border-radius:12px;border:1px dashed rgba(56,189,248,.25);color:#cfe0ff}
+
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+
+    footer{border-top:1px solid rgba(56,189,248,.15);color:#9db4d8;padding:22px 0;margin-top:20px}
+
+    /* responsive */
+    @media (max-width: 900px){
+      .hero .wrap{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .two-col{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#home" aria-label="home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="#38bdf8" stroke-width="1.4"/><path d="M12 7l4 2.2v5.6L12 17l-4-2.2V9.2L12 7z" fill="#38bdf8" opacity=".2"/></svg>
+        Ashish Sharma <span class="badge">GitHub Pages</span>
+      </a>
+      <nav class="menu">
+        <a href="#projects">Projects</a>
+        <a href="#farming">Farming</a>
+        <a href="#puzzles">Puzzles</a>
+        <a href="#blog">Blog</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="container wrap">
+      <div>
+        <div class="card" style="padding:22px">
+          <h1>DevOps Engineer • SPNF Farmer • Maker</h1>
+          <p>Hi, I’m <strong>Ashish</strong>. I build test automation & cloud/devops pipelines, grow <em>Parashar Vedic Farms</em> using SPNF, and share printable puzzles for kids. This is my simple, fast, ad‑free site hosted on <strong>GitHub Pages</strong>.</p>
+          <div class="chips">
+            <span class="chip">Jenkins • Python • AWS</span>
+            <span class="chip">SPNF • Food Forest</span>
+            <span class="chip">Printable Puzzles</span>
+          </div>
+          <div class="cta">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn" href="#puzzles">Download Puzzles</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card panel">
+          <h3>Quick Links</h3>
+          <p>Replace the placeholders below with your real links.</p>
+          <div class="list" style="margin-top:10px">
+            <a class="item" href="#" target="_blank" rel="noopener">GitHub Profile</a>
+            <a class="item" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="item" href="#" target="_blank" rel="noopener">Parashar Vedic Farms</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="grid">
+        <div class="panel card">
+          <h3>CI/CD for EOLT (Demo)</h3>
+          <p>Pipeline that builds, tests, and reports for Telematics ECU. Includes artifact versioning, notifications, and dashboards.</p>
+          <span class="tag">Jenkins • Python • TestStand</span>
+        </div>
+        <div class="panel card">
+          <h3>Infra as Code (Demo)</h3>
+          <p>Reusable Terraform modules for VPC, EKS, and CloudWatch alarms with sane defaults for small teams.</p>
+          <span class="tag">Terraform • AWS</span>
+        </div>
+        <div class="panel card">
+          <h3>Content Engine (Demo)</h3>
+          <p>Automates topic discovery and TTS rendering for educational shorts. Configurable locales and schedulers.</p>
+          <span class="tag">Python • TTS • Automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="farming">
+    <div class="container">
+      <h2>Parashar Vedic Farms</h2>
+      <div class="two-col">
+        <div class="panel card">
+          <h3>SPNF 5‑Layer Model</h3>
+          <p>Notes, planting calendars, and cost sheets for our Vidisha farm. Focus on Moringa, Banana, and pepper vines.</p>
+          <div class="cta"><a class="btn" href="#" download>Download Farm Plan.pdf</a></div>
+        </div>
+        <div class="panel card">
+          <h3>Processing</h3>
+          <p>Shade‑dried Moringa & banana powder SOPs with dryer load plans and QC checklists.</p>
+          <span class="tag">Docs • SOP • QC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="puzzles">
+    <div class="container">
+      <h2>Printable Puzzles (Free)</h2>
+      <div class="two-col">
+        <div class="panel card">
+          <h3>Age 7–9 • Logic Grid #1</h3>
+          <p>PDF (A4) with answer key. Great for reasoning practice.</p>
+          <div class="cta"><a class="btn" href="assets/logic-grid-7-9.pdf" download>Download PDF</a></div>
+        </div>
+        <div class="panel card">
+          <h3>Age 9–12 • Math Challenge #1</h3>
+          <p>Mixed operations & patterns. Clean printable format.</p>
+          <div class="cta"><a class="btn" href="assets/math-9-12.pdf" download>Download PDF</a></div>
+        </div>
+      </div>
+      <p style="color:#9fb2d6;margin-top:10px">Tip: Create an <code>assets/</code> folder in your repo and drop your PDFs there. Update the links above to match file names.</p>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+      <h2>Blog</h2>
+      <div class="list">
+        <div class="item">[Sample] Zero‑Downtime Deployments with Blue‑Green on AWS</div>
+        <div class="item">[Sample] SPNF: 5‑Layer Food Forest in 20 Minutes</div>
+        <div class="item">[Sample] How We Design Printable Puzzles Kids Love</div>
+      </div>
+      <p style="color:#9fb2d6;margin-top:10px">You can later move the blog to <code>/blog/</code> posts or GitHub Pages Jekyll if needed.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="two-col">
+        <form class="panel card" style="display:grid;gap:10px" action="mailto:your.email@example.com" method="post" enctype="text/plain">
+          <h3>Write me</h3>
+          <input aria-label="Your name" name="name" placeholder="Your name" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
+          <input aria-label="Your email" name="email" placeholder="Your email" type="email" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
+          <textarea aria-label="Message" name="message" placeholder="Message" rows="4" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff"></textarea>
+          <button class="btn" type="submit">Send</button>
+          <p style="color:#9fb2d6;font-size:12px;margin:0">Uses your default email app. Replace the <code>mailto:</code> with a form service later if you want.</p>
+        </form>
+        <div class="panel card">
+          <h3>About</h3>
+          <p>I’m based in Germany, working in DevOps/Test Automation and building an SPNF farm in Madhya Pradesh. I share practical templates and printable learning material here.</p>
+          <span class="tag">Based in Frankfurt area</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Ashish Sharma • Built with HTML/CSS • Hosted on GitHub Pages
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
