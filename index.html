@@ -1,277 +1,173 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Parashar Vedic Farms • Moringa & Natural Products</title>
-  <meta name="description" content="Parashar Vedic Farms — SPNF food forest. Shade‑dried Moringa, herbal teas, natural oils, and dehydrated fruits & vegetables." />
-  <meta name="theme-color" content="#0ea5e9" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Libraries -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parashar Vedic Farms</title>
   <style>
-    :root{ --bg:#0b1020; --panel:#121936; --ink:#eaf2ff; --mute:#9fb2d6; --brand:#0ea5e9; --accent:#22c55e; --ring:#38bdf8; }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;scroll-behavior:smooth}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:linear-gradient(180deg,#0b1020,#0a1126 60%,#0b1020);color:var(--ink)}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;background:rgba(11,16,32,.7);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid rgba(56,189,248,.15);z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .nav a.logo{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.2px}
-    .badge{font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(14,165,233,.18);border:1px solid rgba(56,189,248,.35);color:#bfe7ff}
-    .menu{display:flex;gap:18px;align-items:center}
-    .menu a{font-weight:500;color:var(--ink);opacity:.8}
-    .menu a:hover{opacity:1}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(56,189,248,.35);background:rgba(14,165,233,.12);color:#dff3ff;cursor:pointer;transition:.25s}
-    .btn:hover{border-color:rgba(56,189,248,.65);transform:translateY(-2px)}
-
-    /* HERO — big brochure image (no moving text) */
-    #hero{position:relative;height:100vh;overflow:hidden;background:url('assets/pvf-brochure-all-products.JPG') center/cover no-repeat}
-    #hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55));}
-    #hero .overlay{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px;color:#fff}
-    .hero-logo{width:58px;height:58px;border-radius:10px;box-shadow:0 0 0 1px rgba(56,189,248,.35) inset;background:#0b122a url('assets/pvf-logo.png') center/cover no-repeat}
-    .hero-title{font-size:44px;line-height:1.15;margin:14px 0 6px}
-    .hero-sub{color:#e6f4ff;opacity:.95;max-width:840px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-
-    /* Sections */
-    section{padding:56px 0}
-    h2{font-size:26px;margin:0 0 16px}
-    .grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
-    .panel{padding:18px;border-radius:14px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(56,189,248,.16);box-shadow:0 10px 40px rgba(0,0,0,.25);transition:transform .25s ease, box-shadow .25s ease}
-    .card:hover{transform:translateY(-6px);box-shadow:0 18px 54px rgba(0,0,0,.35)}
-    .tag{display:inline-block;margin-top:10px;font-size:11px;padding:4px 8px;border-radius:8px;border:1px solid rgba(56,189,248,.35);color:#cfeaff}
-
-    /* Image cards */
-    .img{height:180px;border-radius:12px;background:#0b122a center/cover no-repeat}
-
-    /* Swiper */
-    .swiper{width:100%;padding:10px 0}
-    .swiper-slide{display:block}
-
-    /* Benefits counters */
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .stat{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(56,189,248,.16);padding:16px;border-radius:14px;text-align:center}
-    .stat .num{font-size:28px;font-weight:700}
-    .stat .lbl{color:#9fb2d6}
-
-    /* FAQ */
-    .accordion{border:1px solid rgba(56,189,248,.18);border-radius:12px;overflow:hidden}
-    .acc-item{border-top:1px solid rgba(56,189,248,.12)}
-    .acc-btn{width:100%;text-align:left;padding:14px 16px;background:rgba(255,255,255,.02);border:0;color:#eaf2ff;font-weight:600;cursor:pointer}
-    .acc-panel{display:none;padding:0 16px 14px;color:#b8c7e6}
-    .acc-item.open .acc-panel{display:block}
-
-    /* Responsive */
-    @media (max-width: 1000px){ .grid{grid-template-columns:1fr 1fr} .stats{grid-template-columns:1fr 1fr} }
-    @media (max-width: 640px){ .grid{grid-template-columns:1fr} .hero-title{font-size:34px} }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfdfd;
+      color: #222;
+    }
+    header {
+      background: #2e7d32;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 48px;
+    }
+    header h1 {
+      color: white;
+      font-size: 20px;
+      margin: 0;
+    }
+    .hero {
+      background: url("assets/pvf-brochure-all-products.JPG") center/cover no-repeat;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #2e7d32;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+    .brochure {
+      text-align: center;
+    }
+    .brochure img {
+      max-width: 400px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+    .brochure a {
+      display: inline-block;
+      background: #2e7d32;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .brochure a:hover {
+      background: #256528;
+    }
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <div class="container nav">
-      <a class="logo" href="#home" aria-label="home">
-        <img src="assets/pvf-logo.png" alt="Parashar Vedic Farms logo" width="32" height="32" style="border-radius:6px;box-shadow:0 0 0 1px rgba(56,189,248,.4) inset">
-        Parashar Vedic Farms <span class="badge">Natural Products</span>
-      </a>
-      <nav class="menu">
-        <a href="#products">Products</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#contact" class="btn">Contact</a>
-      </nav>
-    </div>
+    <img src="assets/pvf-logo.png" alt="Parashar Vedic Farms Logo"/>
+    <h1>Parashar Vedic Farms</h1>
   </header>
 
-  <!-- HERO (stable text + big brochure image) -->
-  <section id="home">
-    <div id="hero">
-      <div class="overlay container">
-        <div class="hero-logo" data-aos="zoom-in"></div>
-        <h1 class="hero-title" data-aos="fade-up">Parashar Vedic Farms</h1>
-        <p class="hero-sub" data-aos="fade-up" data-aos-delay="120">Shade‑dried <strong>Moringa</strong>, soothing <strong>herbal teas</strong>, natural <strong>oils</strong>, and <strong>dehydrated fruits & vegetables</strong> — grown and crafted with SPNF care.</p>
-        <div class="cta" data-aos="fade-up" data-aos-delay="220">
-          <a href="#products" class="btn">Explore Products</a>
-          <a href="assets/pvf-brochure-all-products.pdf" class="btn" download>Download Brochure</a>
-        </div>
+  <!-- Hero -->
+  <div class="hero">
+    Natural Products for Healthy Living
+  </div>
+
+  <!-- All Products -->
+  <section class="section">
+    <h2>Our Products</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/moringa-powder.jpg" alt="Moringa Powder">
+        <h3>Moringa Powder</h3>
+      </div>
+      <div class="card">
+        <img src="assets/moringa-oil.jpg" alt="Moringa Oil">
+        <h3>Moringa Oil</h3>
+      </div>
+      <div class="card">
+        <img src="assets/moringa-tablets.jpg" alt="Moringa Tablets">
+        <h3>Moringa Tablets</h3>
+      </div>
+      <div class="card">
+        <img src="assets/moringa-capsules.jpg" alt="Moringa Capsules">
+        <h3>Moringa Capsules</h3>
+      </div>
+      <div class="card">
+        <img src="assets/moringa-green-tea.jpg" alt="Moringa Green Tea">
+        <h3>Moringa Green Tea</h3>
+      </div>
+      <div class="card">
+        <img src="assets/moringa-herbal-tea.jpg" alt="Moringa Herbal Tea">
+        <h3>Moringa Herbal Tea</h3>
+      </div>
+      <div class="card">
+        <img src="assets/dehydrated-fruits.jpg" alt="Dehydrated Fruits">
+        <h3>Dehydrated Fruits</h3>
+      </div>
+      <div class="card">
+        <img src="assets/dehydrated-veg.jpg" alt="Dehydrated Vegetables">
+        <h3>Dehydrated Vegetables</h3>
+      </div>
+      <div class="card">
+        <img src="assets/moringa-seed-powder.jpg" alt="Moringa Seed Powder">
+        <h3>Moringa Seed Powder</h3>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED PRODUCTS (Swiper) -->
-  <section id="products" class="container">
-    <h2 data-aos="fade-up">Featured Products</h2>
-    <div class="swiper" data-aos="fade-up" data-aos-delay="100">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="panel card">
-            <div class="img" style="background-image:url('assets/moringa-powder.jpg')"></div>
-            <div style="padding:12px 6px">
-              <h3>Moringa Leaf Powder</h3>
-              <p style="color:#b8c7e6;margin:6px 0 0">Vitamins A/C/E, calcium & polyphenols. 100g • 250g • 500g.</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="panel card">
-            <div class="img" style="background-image:url('assets/moringa-oil.jpg')"></div>
-            <div style="padding:12px 6px">
-              <h3>Moringa Oil (Cold‑Pressed)</h3>
-              <p style="color:#b8c7e6;margin:6px 0 0">High oleic & vitamin‑E rich. 30ml • 100ml.</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="panel card">
-            <div class="img" style="background-image:url('assets/moringa-green-tea.jpg')"></div>
-            <div style="padding:12px 6px">
-              <h3>Moringa Green Tea (Blends)</h3>
-              <p style="color:#b8c7e6;margin:6px 0 0">Lemon • Mint • Ginger • Tulsi — 25 bags / 100g loose.</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="panel card">
-            <div class="img" style="background-image:url('assets/dehydrated-fruits.jpg')"></div>
-            <div style="padding:12px 6px">
-              <h3>Dehydrated Fruits</h3>
-              <p style="color:#b8c7e6;margin:6px 0 0">Mango • Kiwi • Banana — no added sugar.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-
-    <h2 style="margin-top:32px" data-aos="fade-up">All Products</h2>
-    <div class="grid" data-aos="fade-up" data-aos-delay="100">
-      <div class="panel card">
-        <div class="img" style="background-image:url('assets/moringa-tablets.jpg')"></div>
-        <h3 style="margin-top:10px">Moringa Tablets (Leaf)</h3>
-        <p>500mg tablets; vegetarian; additive‑free. Bottles: 60 / 120.</p>
-        <span class="tag">Supplements</span>
-      </div>
-      <div class="panel card">
-        <div class="img" style="background-image:url('assets/moringa-capsules.jpg')"></div>
-        <h3 style="margin-top:10px">Moringa Capsules</h3>
-        <p>500mg vegetarian capsules of shade‑dried leaf powder.</p>
-        <span class="tag">Supplements</span>
-      </div>
-      <div class="panel card">
-        <div class="img" style="background-image:url('assets/moringa-herbal-tea.jpg')"></div>
-        <h3 style="margin-top:10px">Moringa Herbal Teas</h3>
-        <p>Tulsi Calm • Ginger Zest • Lemongrass Fresh • Hibiscus Glow.</p>
-        <span class="tag">Teas</span>
-      </div>
-      <div class="panel card">
-        <div class="img" style="background-image:url('assets/dehydrated-veg.jpg')"></div>
-        <h3 style="margin-top:10px">Dehydrated Vegetables</h3>
-        <p>Tomato flakes • Garlic & Onion powders • Spinach crisps.</p>
-        <span class="tag">Vegetables</span>
-      </div>
-      <div class="panel card">
-        <div class="img" style="background-image:url('assets/moringa-seed-powder.jpg')"></div>
-        <h3 style="margin-top:10px">Moringa Seed Powder</h3>
-        <p>Defatted seed cake; high protein; for select culinary/cosmetic DIY.</p>
-        <span class="tag">Moringa</span>
-      </div>
-      <div class="panel card" onclick="window.open('assets/pvf-brochure-all-products.pdf','_blank')" title="Open full brochure">
-        <div class="img" style="background-image:url('assets/pvf-brochure-all-products.JPG')"></div>
-        <h3 style="margin-top:10px">Full Brochure</h3>
-        <p>Click to view/download our complete product brochure.</p>
-        <span class="tag">PDF</span>
-      </div>
-    </div>
+  <!-- Brochure Section -->
+  <section class="section brochure">
+    <h2>Our Brochure</h2>
+    <img src="assets/pvf-brochure.JPG" alt="Parashar Vedic Farms Brochure">
+    <br>
+    <a href="assets/pvf-brochure.JPG" download>Download Brochure</a>
   </section>
 
-  <!-- BENEFITS -->
-  <section id="benefits">
-    <div class="container">
-      <h2 data-aos="fade-up">Benefits & Quality</h2>
-      <div class="stats" data-aos="fade-up" data-aos-delay="120">
-        <div class="stat"><div class="num" data-target="20">0</div><div class="lbl">Products</div></div>
-        <div class="stat"><div class="num" data-target="100">0%</div><div class="lbl">Natural</div></div>
-        <div class="stat"><div class="num" data-target="5">0</div><div class="lbl">Core Ranges</div></div>
-      </div>
-      <div class="accordion" style="margin-top:18px" data-aos="fade-up" data-aos-delay="220">
-        <div class="acc-item">
-          <button class="acc-btn" aria-expanded="false">Why shade‑dried?</button>
-          <div class="acc-panel"><p>Gentle drying helps retain natural colour, aroma, and polyphenols compared to high‑heat techniques.</p></div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-btn" aria-expanded="false">Any additives?</button>
-          <div class="acc-panel"><p>No additives or colours. Made from whole leaves, seeds, and fresh produce — small batches only.</p></div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-btn" aria-expanded="false">Daily intake suggestions</button>
-          <div class="acc-panel"><p>Leaf powder: ~1 tsp/day for adults with meals. Teas: 1–2 cups/day. Check with a professional for specific needs.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h2 data-aos="fade-up">Contact</h2>
-      <div class="grid" data-aos="fade-up" data-aos-delay="120">
-        <form class="panel card" style="display:grid;gap:10px">
-          <h3>Write us</h3>
-          <input aria-label="Your name" name="name" placeholder="Your name" maxlength="60" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
-          <input aria-label="Your email" name="email" placeholder="Your email" type="email" maxlength="120" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
-          <textarea aria-label="Message" name="message" placeholder="Message" rows="4" maxlength="800" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff"></textarea>
-          <div class="cta"><a class="btn" href="mailto:your.email@example.com">Send Email</a><a class="btn" href="https://wa.me/911234567890" target="_blank" rel="noopener">WhatsApp</a></div>
-          <p style="color:#9fb2d6;font-size:12px;margin:0">Replace email/WhatsApp with your real contact.</p>
-        </form>
-        <div class="panel card" style="display:flex;align-items:center;justify-content:center">
-          <div>
-            <h3 style="margin:0 0 8px">Download Brochure</h3>
-            <a class="btn" href="assets/pvf-brochure-all-products.pdf" download>Full Product Brochure (PDF)</a>
-            <p style="color:#9fb2d6;margin-top:8px">Add your logo as <code>assets/pvf-logo.png</code>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    <div class="container" style="padding:22px 0;border-top:1px solid rgba(56,189,248,.15);color:#9db4d8">
-      © <span id="year"></span> Parashar Vedic Farms • Built with HTML/CSS • Hosted on GitHub Pages
-    </div>
+    © 2025 Parashar Vedic Farms — All rights reserved.
   </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-  <script>
-    // Init AOS
-    AOS.init({ duration: 1200, once: true });
-
-    // Swiper carousel
-    const swiper = new Swiper('.swiper', {
-      slidesPerView: 1,
-      spaceBetween: 14,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      breakpoints: { 720:{slidesPerView:2}, 1024:{slidesPerView:3} }
-    });
-
-    // Stats counters
-    const counters=document.querySelectorAll('.stat .num');
-    const runCounter = (el)=>{ const target=+el.dataset.target; let n=0; const inc=Math.max(1,Math.ceil(target/80)); const tick=()=>{ n+=inc; if(n>=target){ el.textContent=target+(el.textContent.includes('%')?'%':''); } else { el.textContent=n; requestAnimationFrame(tick);} }; tick(); };
-    const io=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ runCounter(e.target); io.unobserve(e.target);} }); });
-    counters.forEach(c=>io.observe(c));
-
-    // FAQ accordion
-    document.querySelectorAll('.acc-btn').forEach(btn=>{
-      btn.addEventListener('click',()=>{ const item=btn.parentElement; const open=item.classList.toggle('open'); btn.setAttribute('aria-expanded',open?'true':'false'); });
-    });
-
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
