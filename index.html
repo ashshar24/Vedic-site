@@ -4,322 +4,303 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Parashar Vedic Farms • Moringa & Natural Products</title>
-  <meta name="description" content="Parashar Vedic Farms — SPNF food forest bringing you shade‑dried Moringa, herbal teas, natural oils, and dehydrated fruits & vegetables." />
-  <meta property="og:title" content="Parashar Vedic Farms • Moringa & Natural Products" />
-  <meta property="og:description" content="Explore our shade‑dried Moringa range, herbal teas, natural oils, and dehydrated fruits & vegetables." />
+  <meta name="description" content="Parashar Vedic Farms — SPNF food forest. Shade‑dried Moringa, herbal teas, natural oils, and dehydrated fruits & vegetables." />
   <meta name="theme-color" content="#0ea5e9" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Libraries -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
   <style>
     :root{ --bg:#0b1020; --panel:#121936; --ink:#eaf2ff; --mute:#9fb2d6; --brand:#0ea5e9; --accent:#22c55e; --ring:#38bdf8; }
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;scroll-behavior:smooth}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:linear-gradient(180deg,#0b1020,#0a1126 60%,#0b1020);color:var(--ink)}
     a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
     header{position:sticky;top:0;background:rgba(11,16,32,.7);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid rgba(56,189,248,.15);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .nav a.logo{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.2px}
     .badge{font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(14,165,233,.18);border:1px solid rgba(56,189,248,.35);color:#bfe7ff}
     .menu{display:flex;gap:18px;align-items:center}
-    .menu a{font-weight:500;color:var(--mute)}
-    .menu a:hover{color:#d9eaff}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(56,189,248,.35);background:rgba(14,165,233,.12);color:#dff3ff;cursor:pointer}
-    .btn:hover{border-color:rgba(56,189,248,.65)}
-    .hero{padding:56px 0 28px}
-    .hero .wrap{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(56,189,248,.16);border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
-    .hero h1{font-size:40px;line-height:1.15;margin:0 0 10px}
-    .hero p{color:var(--mute);font-size:16px}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
-    .chip{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(34,197,94,.4);background:rgba(34,197,94,.12);color:#d2f8db}
+    .menu a{font-weight:500;color:var(--ink);opacity:.8}
+    .menu a:hover{opacity:1}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(56,189,248,.35);background:rgba(14,165,233,.12);color:#dff3ff;cursor:pointer;transition:.25s}
+    .btn:hover{border-color:rgba(56,189,248,.65);transform:translateY(-2px)}
+
+    /* HERO with video background + gradient fallback */
+    #hero{position:relative;height:100vh;overflow:hidden}
+    #hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+    #hero::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 80% at 50% 20%,rgba(56,189,248,.25),transparent 60%),linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.55) 50%,rgba(0,0,0,.7));z-index:2}
+    #hero .overlay{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px}
+    .hero-logo{width:58px;height:58px;border-radius:10px;box-shadow:0 0 0 1px rgba(56,189,248,.35) inset;background:#0b122a url('assets/pvf-logo.png') center/cover no-repeat}
+    .hero-title{font-size:44px;line-height:1.15;margin:14px 0 6px}
+    .hero-sub{color:#d0e6ff;opacity:.9;max-width:820px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+
+    /* Sections */
+    section{padding:56px 0}
+    h2{font-size:26px;margin:0 0 16px}
     .grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
-    section{padding:40px 0}
-    h2{font-size:22px;margin:0 0 14px}
     .panel{padding:18px;border-radius:14px}
-    .panel h3{margin:0 0 6px;font-size:16px}
-    .panel p{margin:0;color:#b8c7e6;font-size:14px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(56,189,248,.16);box-shadow:0 10px 40px rgba(0,0,0,.25);transition:transform .25s ease, box-shadow .25s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 54px rgba(0,0,0,.35)}
     .tag{display:inline-block;margin-top:10px;font-size:11px;padding:4px 8px;border-radius:8px;border:1px solid rgba(56,189,248,.35);color:#cfeaff}
-    .two-col{display:grid;gap:18px;grid-template-columns:1fr 1fr}
-    .list{display:flex;flex-direction:column;gap:12px}
-    .list .item{padding:14px;border-radius:12px;border:1px dashed rgba(56,189,248,.25);color:#cfe0ff}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    footer{border-top:1px solid rgba(56,189,248,.15);color:#9db4d8;padding:22px 0;margin-top:20px}
-    .pill{display:inline-block;font-size:12px;padding:6px 10px;border:1px solid rgba(56,189,248,.35);border-radius:999px;color:#cfeaff}
 
-    /* brochure image (no overlay text) */
-    .brochure{min-height:320px;position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(56,189,248,.2);background:url('assets/pvf-brochure.jpg') center/cover no-repeat}
-    .brochure::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(11,18,42,.25) 50%,transparent)}
+    /* Swiper */
+    .swiper{width:100%;padding:10px 0}
+    .swiper-slide{display:block}
 
-    /* product filter buttons */
-    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 16px}
-    .filters .btn[aria-pressed="true"]{background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.6)}
+    /* Benefits counters */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .stat{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(56,189,248,.16);padding:16px;border-radius:14px;text-align:center}
+    .stat .num{font-size:28px;font-weight:700}
+    .stat .lbl{color:#9fb2d6}
 
-    /* hover lift */
-    .panel.card{transition:transform .2s ease, box-shadow .2s ease}
-    .panel.card:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,.35)}
+    /* Timeline */
+    .timeline{position:relative;margin-top:10px}
+    .timeline::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:rgba(56,189,248,.35)}
+    .t-item{position:relative;padding-left:36px;margin:18px 0}
+    .t-item::before{content:"";position:absolute;left:6px;top:6px;width:14px;height:14px;border-radius:50%;background:#38bdf8}
 
-    /* accordion */
+    /* FAQ */
     .accordion{border:1px solid rgba(56,189,248,.18);border-radius:12px;overflow:hidden}
     .acc-item{border-top:1px solid rgba(56,189,248,.12)}
     .acc-btn{width:100%;text-align:left;padding:14px 16px;background:rgba(255,255,255,.02);border:0;color:#eaf2ff;font-weight:600;cursor:pointer}
     .acc-panel{display:none;padding:0 16px 14px;color:#b8c7e6}
     .acc-item.open .acc-panel{display:block}
 
-    @media (max-width: 900px){ .hero .wrap{grid-template-columns:1fr} .grid{grid-template-columns:1fr} .two-col{grid-template-columns:1fr} .hero h1{font-size:32px} }
+    /* Brochure side banner */
+    .brochure{min-height:340px;position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(56,189,248,.2);background:url('assets/pvf-brochure-all-products.JPG') center/cover no-repeat;opacity:0;transform:translateX(50px);transition:all .9s ease}
+    .brochure.show{opacity:1;transform:translateX(0)}
+
+    /* Floating WhatsApp */
+    .wa{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;padding:12px 14px;border-radius:999px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:60}
+
+    /* Responsive */
+    @media (max-width: 1000px){ .grid{grid-template-columns:1fr 1fr} .stats{grid-template-columns:1fr 1fr} }
+    @media (max-width: 640px){ .grid{grid-template-columns:1fr} .hero-title{font-size:34px} }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <a class="logo" href="#home" aria-label="home">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="#38bdf8" stroke-width="1.4"/><path d="M12 7l4 2.2v5.6L12 17l-4-2.2V9.2L12 7z" fill="#38bdf8" opacity=".2"/></svg>
+        <img src="assets/pvf-logo.png" alt="Parashar Vedic Farms logo" width="32" height="32" style="border-radius:6px;box-shadow:0 0 0 1px rgba(56,189,248,.4) inset">
         Parashar Vedic Farms <span class="badge">Natural Products</span>
       </a>
       <nav class="menu">
         <a href="#products">Products</a>
         <a href="#benefits">Benefits</a>
-        <a href="#farming">Our Farm</a>
-        <a href="#puzzles">Puzzles</a>
-        <a class="btn" href="#contact">Contact</a>
+        <a href="#farm">Our Farm</a>
+        <a href="#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="home" class="hero">
-    <div class="container wrap">
-      <div>
-        <div class="card" style="padding:22px">
-          <h1>Natural • Shade‑Dried • Farm‑Fresh</h1>
-          <p>Welcome to <strong>Parashar Vedic Farms</strong> — a SPNF food forest and processing unit in Madhya Pradesh. Discover the <strong>power of Moringa</strong>, our <strong>herbal teas</strong>, <strong>natural oils</strong>, and <strong>dehydrated fruits & vegetables</strong> that blend tradition with wellness.</p>
-          <div class="chips">
-            <span class="chip">Moringa</span>
-            <span class="chip">Herbal Teas</span>
-            <span class="chip">Natural Oils</span>
-            <span class="chip">Dehydrated Fruits & Veggies</span>
-          </div>
-          <div class="cta">
-            <a class="btn" href="#products">See Our Products</a>
-            <a class="btn" href="#benefits">See Benefits</a>
-          </div>
+  <!-- HERO -->
+  <section id="home">
+    <div id="hero">
+      <video autoplay muted loop playsinline id="heroVideo">
+        <source src="assets/farm-bg.mp4" type="video/mp4">
+      </video>
+      <div class="overlay container">
+        <div class="hero-logo" data-aos="zoom-in"></div>
+        <h1 class="hero-title" id="typedText" data-aos="fade-up">Parashar Vedic Farms</h1>
+        <p class="hero-sub" data-aos="fade-up" data-aos-delay="150">Shade‑dried <strong>Moringa</strong>, soothing <strong>herbal teas</strong>, natural <strong>oils</strong>, and <strong>dehydrated fruits & vegetables</strong> — grown and crafted with SPNF care.</p>
+        <div class="cta" data-aos="fade-up" data-aos-delay="250">
+          <a href="#products" class="btn">Explore Products</a>
+          <a href="assets/pvf-brochure-all-products.pdf" class="btn" download>Download Brochure</a>
         </div>
-      </div>
-      <aside class="brochure card" aria-label="Parashar Vedic Farms brochure image"></aside>
-    </div>
-  </main>
-
-  <section id="products">
-    <div class="container">
-      <h2 style="display:flex;align-items:center;gap:12px">Our Products <span class="pill">Farm‑Fresh • SPNF</span></h2>
-
-      <div class="filters" role="toolbar" aria-label="Product filters">
-        <button class="btn" data-filter="all" aria-pressed="true">All</button>
-        <button class="btn" data-filter="moringa">Moringa</button>
-        <button class="btn" data-filter="tea">Teas</button>
-        <button class="btn" data-filter="fruits">Fruits</button>
-        <button class="btn" data-filter="veg">Vegetables</button>
-        <button class="btn" data-filter="oil">Oils</button>
-      </div>
-
-      <div class="grid" id="productGrid">
-        <div class="panel card" data-cat="moringa">
-          <h3>Moringa Leaf Powder</h3>
-          <p>Rich in vitamins (A, C, E), minerals (calcium, iron, potassium) and polyphenols. Supports immunity, energy, and overall vitality.</p>
-          <ul class="list">
-            <li class="item">Packs: 100g • 250g • 500g</li>
-            <li class="item">Use: 1 tsp/day for adults; add to smoothies, rotis, soups</li>
-            <li class="item">Processing: Shade‑dried, finely milled, small batch</li>
-          </ul>
-        </div>
-        <div class="panel card" data-cat="oil moringa">
-          <h3>Moringa Oil (Cold‑Pressed)</h3>
-          <p>High in oleic and behenic acids; naturally rich in tocopherols. Excellent for skin & hair nourishment and light culinary use.</p>
-          <ul class="list">
-            <li class="item">Sizes: 30ml • 100ml</li>
-            <li class="item">Skin: moisturizes, supports barrier, absorbs fast</li>
-            <li class="item">Hair: pre‑wash mask or serum for shine</li>
-          </ul>
-        </div>
-        <div class="panel card" data-cat="tea moringa">
-          <h3>Moringa Herbal Teas</h3>
-          <p>Shade‑dried leaf blends crafted for taste & wellness. Caffeine‑light and soothing.</p>
-          <ul class="list">
-            <li class="item">Flavours: Tulsi Calm • Ginger Zest • Lemongrass Fresh • Hibiscus Glow</li>
-            <li class="item">Brew: 3–4 min @ 90°C; enjoy plain or with honey</li>
-            <li class="item">Packs: 50g • 100g</li>
-          </ul>
-        </div>
-        <div class="panel card" data-cat="fruits">
-          <h3>Dehydrated Fruits</h3>
-          <p>Naturally dehydrated, no added sugar. Nutrient‑dense snacks.</p>
-          <ul class="list">
-            <li class="item">Mango slices — Vitamin A & carotenoids</li>
-            <li class="item">Kiwi chips — Vitamin C</li>
-            <li class="item">Banana chips — Potassium</li>
-          </ul>
-        </div>
-        <div class="panel card" data-cat="veg">
-          <h3>Dehydrated Vegetables</h3>
-          <p>Convenient, flavourful cooking essentials that retain nutrition.</p>
-          <ul class="list">
-            <li class="item">Tomato flakes — Lycopene rich</li>
-            <li class="item">Garlic & Onion powders — Aroma & immunity support</li>
-            <li class="item">Spinach crisps — Iron & folate</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="panel card" style="margin-top:20px">
-        <h3>Why Choose Parashar Vedic Farms?</h3>
-        <p>✔ Shade‑drying retains nutrients & natural aroma<br>
-           ✔ SPNF methods ensure chemical‑free produce<br>
-           ✔ Inspired by Ayurveda, aligned with modern nutrition research<br>
-           ✔ Sustainable, farmer‑friendly, and eco‑conscious</p>
       </div>
     </div>
   </section>
 
+  <!-- FEATURED PRODUCTS (Swiper) -->
+  <section id="products" class="container">
+    <h2 data-aos="fade-up">Featured Products</h2>
+    <div class="swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="panel card">
+            <div style="height:180px;border-radius:12px;background:#0b122a url('assets/moringa-powder.jpg') center/cover no-repeat"></div>
+            <div style="padding:12px 6px">
+              <h3>Moringa Leaf Powder</h3>
+              <p style="color:#b8c7e6;margin:6px 0 0">Vitamins A/C/E, calcium & polyphenols. 100g • 250g • 500g.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="panel card">
+            <div style="height:180px;border-radius:12px;background:#0b122a url('assets/moringa-oil.jpg') center/cover no-repeat"></div>
+            <div style="padding:12px 6px">
+              <h3>Moringa Oil (Cold‑Pressed)</h3>
+              <p style="color:#b8c7e6;margin:6px 0 0">High oleic & vitamin‑E rich. 30ml • 100ml.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="panel card">
+            <div style="height:180px;border-radius:12px;background:#0b122a url('assets/moringa-green-tea.jpg') center/cover no-repeat"></div>
+            <div style="padding:12px 6px">
+              <h3>Moringa Green Tea (Blends)</h3>
+              <p style="color:#b8c7e6;margin:6px 0 0">Lemon • Mint • Ginger • Tulsi — 25 bags / 100g loose.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="panel card">
+            <div style="height:180px;border-radius:12px;background:#0b122a url('assets/dehydrated-fruits.jpg') center/cover no-repeat"></div>
+            <div style="padding:12px 6px">
+              <h3>Dehydrated Fruits</h3>
+              <p style="color:#b8c7e6;margin:6px 0 0">Mango • Kiwi • Banana — no added sugar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <h2 style="margin-top:32px" data-aos="fade-up">All Products</h2>
+    <div class="grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="panel card">
+        <h3>Moringa Tablets (Leaf)</h3>
+        <p>500mg tablets; vegetarian; additive‑free. Bottles: 60 / 120.</p>
+        <span class="tag">Supplements</span>
+      </div>
+      <div class="panel card">
+        <h3>Moringa Capsules</h3>
+        <p>500mg vegetarian capsules of shade‑dried leaf powder.</p>
+        <span class="tag">Supplements</span>
+      </div>
+      <div class="panel card">
+        <h3>Moringa Herbal Teas</h3>
+        <p>Tulsi Calm • Ginger Zest • Lemongrass Fresh • Hibiscus Glow.</p>
+        <span class="tag">Teas</span>
+      </div>
+      <div class="panel card">
+        <h3>Dehydrated Vegetables</h3>
+        <p>Tomato flakes • Garlic & Onion powders • Spinach crisps.</p>
+        <span class="tag">Vegetables</span>
+      </div>
+      <div class="panel card">
+        <h3>Moringa Seed Powder</h3>
+        <p>Defatted seed cake; high protein; for select culinary/cosmetic DIY.</p>
+        <span class="tag">Moringa</span>
+      </div>
+      <div class="panel card brochure show" onclick="window.open('assets/pvf-brochure-all-products.pdf','_blank')" title="Open full brochure">
+        <h3 style="margin:0 0 8px">Full Brochure</h3>
+        <p>Click to view/download our complete product brochure.</p>
+        <span class="tag">PDF</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
   <section id="benefits">
     <div class="container">
-      <h2>Moringa Benefits (At a Glance)</h2>
-      <div class="two-col">
-        <div class="panel card">
-          <h3>Moringa Leaves</h3>
-          <ul class="list">
-            <li class="item">Nutrient‑dense: protein, calcium, iron, potassium, vitamins A/C/E</li>
-            <li class="item">Antioxidants: polyphenols & flavonoids support oxidative balance</li>
-            <li class="item">Daily use: 1 tsp powder can enrich common foods</li>
-          </ul>
-        </div>
-        <div class="panel card">
-          <h3>Moringa Oil</h3>
-          <ul class="list">
-            <li class="item">High oleic acid: excellent skin emollient & barrier support</li>
-            <li class="item">Tocopherols & sterols: antioxidant activity for skin/hair</li>
-            <li class="item">Light cooking oil with pleasant, nutty notes</li>
-          </ul>
-        </div>
+      <h2 data-aos="fade-up">Benefits & Quality</h2>
+      <div class="stats" data-aos="fade-up" data-aos-delay="120">
+        <div class="stat"><div class="num" data-target="20">0</div><div class="lbl">Products</div></div>
+        <div class="stat"><div class="num" data-target="100">0%</div><div class="lbl">Natural</div></div>
+        <div class="stat"><div class="num" data-target="5">0</div><div class="lbl">Core Ranges</div></div>
+        <div class="stat"><div class="num" data-target="10">0</div><div class="lbl">Years in Farming</div></div>
       </div>
-      <div class="accordion" style="margin-top:16px">
+      <div class="accordion" style="margin-top:18px" data-aos="fade-up" data-aos-delay="220">
         <div class="acc-item">
-          <button class="acc-btn" aria-expanded="false">How do we dry and process?</button>
-          <div class="acc-panel"><p>Gentle, low‑heat shade drying on cleaned racks; de‑stemmed, milled in small batches, and sealed quickly to retain colour and aroma.</p></div>
+          <button class="acc-btn" aria-expanded="false">Why shade‑dried?</button>
+          <div class="acc-panel"><p>Gentle drying helps retain natural colour, aroma, and polyphenols compared to high‑heat techniques.</p></div>
         </div>
         <div class="acc-item">
-          <button class="acc-btn" aria-expanded="false">Any additives or colours?</button>
-          <div class="acc-panel"><p>No. Our products are additive‑free, colour‑free, and made from whole leaves or fruits/vegetables.</p></div>
+          <button class="acc-btn" aria-expanded="false">Any additives?</button>
+          <div class="acc-panel"><p>No additives or colours. Made from whole leaves, seeds, and fresh produce — small batches only.</p></div>
         </div>
         <div class="acc-item">
-          <button class="acc-btn" aria-expanded="false">Suggested daily intake</button>
-          <div class="acc-panel"><p>Adults: ~1 tsp leaf powder per day with meals; teas 1–2 cups/day as preferred. Always consult a professional for specific medical conditions.</p></div>
-        </div>
-      </div>
-      <div class="panel card" style="margin-top:16px">
-        <h3>Research & Sources</h3>
-        <p>Explore detailed reviews and studies on moringa nutrition, oil composition, and drying effects:</p>
-        <ul class="list">
-          <li class="item"><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8373516/">Comprehensive review of Moringa nutrients (2021)</a></li>
-          <li class="item"><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9030530/">Nutritional & antioxidant properties (2022)</a></li>
-          <li class="item"><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5187941/">Seed oil composition and uses (2016)</a></li>
-          <li class="item"><a target="_blank" rel="noopener" href="https://www.fao.org/family-farming/detail/en/c/1644586/">FAO overview on moringa potential (FAO)</a></li>
-          <li class="item"><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6261129/">Drying alters phenolics & antioxidants (2018)</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="farming">
-    <div class="container">
-      <h2>Our Farm (SPNF • Vidisha)</h2>
-      <div class="two-col">
-        <div class="panel card">
-          <h3>SPNF 5‑Layer Model</h3>
-          <p>Food forest with Moringa, Banana, pepper vines & intercrops. Water‑wise, chemical‑free, biodiversity‑friendly.</p>
-          <div class="cta"><a class="btn" href="#" download>Download Farm Plan.pdf</a></div>
-        </div>
-        <div class="panel card">
-          <h3>Processing</h3>
-          <p>Shade‑drying SOPs, hygiene protocols, dryer load plans, and QC checklists for consistent quality.</p>
-          <span class="tag">Docs • SOP • QC</span>
+          <button class="acc-btn" aria-expanded="false">Daily intake suggestions</button>
+          <div class="acc-panel"><p>Leaf powder: ~1 tsp/day for adults with meals. Teas: 1–2 cups/day. Check with a professional for specific needs.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="puzzles">
-    <div class="container">
-      <h2>Printable Puzzles (Free)</h2>
-      <div class="two-col">
-        <div class="panel card">
-          <h3>Age 7–9 • Logic Grid #1</h3>
-          <p>PDF (A4) with answer key. Great for reasoning practice.</p>
-          <div class="cta"><a class="btn" href="assets/logic-grid-7-9.pdf" download>Download PDF</a></div>
-        </div>
-        <div class="panel card">
-          <h3>Age 9–12 • Math Challenge #1</h3>
-          <p>Mixed operations & patterns. Clean printable format.</p>
-          <div class="cta"><a class="btn" href="assets/math-9-12.pdf" download>Download PDF</a></div>
-        </div>
-      </div>
-      <h3 style="margin-top:20px">Good Free Puzzle Sources</h3>
-      <div class="list">
-        <a class="item" target="_blank" rel="noopener" href="https://krazydad.com/">Krazydad (Sudoku, Kakuro, Slitherlink…)</a>
-        <a class="item" target="_blank" rel="noopener" href="https://www.math-drills.com/">Math-Drills (worksheets by grade)</a>
-        <a class="item" target="_blank" rel="noopener" href="https://www.k5learning.com/free-math-worksheets">K5 Learning (math & reading)</a>
-        <a class="item" target="_blank" rel="noopener" href="https://puzzlemix.com/printables">Puzzlemix (assorted printables)</a>
-      </div>
+  <!-- FARM STORY -->
+  <section id="farm" class="container">
+    <h2 data-aos="fade-up">Our Farm (SPNF • Vidisha)</h2>
+    <div class="timeline" data-aos="fade-up" data-aos-delay="120">
+      <div class="t-item"><strong>2016</strong> — Began SPNF experiments with Moringa & Banana.</div>
+      <div class="t-item"><strong>2019</strong> — Built shade‑drying racks; started small‑batch milling.</div>
+      <div class="t-item"><strong>2023</strong> — Expanded to herbal teas and dehydrated fruits.</div>
+      <div class="t-item"><strong>2025</strong> — Launching premium moringa oil & export‑ready packs.</div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <h2>Contact</h2>
-      <div class="two-col">
-        <form class="panel card" style="display:grid;gap:10px" action="mailto:your.email@example.com" method="post" enctype="text/plain">
+      <h2 data-aos="fade-up">Contact</h2>
+      <div class="grid" data-aos="fade-up" data-aos-delay="120">
+        <form class="panel card" style="display:grid;gap:10px">
           <h3>Write us</h3>
           <input aria-label="Your name" name="name" placeholder="Your name" maxlength="60" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
           <input aria-label="Your email" name="email" placeholder="Your email" type="email" maxlength="120" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
           <textarea aria-label="Message" name="message" placeholder="Message" rows="4" maxlength="800" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff"></textarea>
-          <button class="btn" type="submit">Send</button>
-          <p style="color:#9fb2d6;font-size:12px;margin:0">Uses your default email app. Replace the <code>mailto:</code> with a form service later if you want.</p>
+          <div class="cta"><a class="btn" href="mailto:your.email@example.com">Send Email</a><a class="btn" href="https://wa.me/911234567890" target="_blank" rel="noopener">WhatsApp</a></div>
+          <p style="color:#9fb2d6;font-size:12px;margin:0">Replace email/WhatsApp with your real contact.</p>
         </form>
-        <div class="panel card">
-          <h3>About</h3>
-          <p>We’re based in Germany and building an SPNF farm in Madhya Pradesh. Sharing Moringa products, farm learnings, and educational freebies.</p>
-          <span class="tag">Parashar Vedic Farms</span>
-        </div>
+        <div class="panel card brochure" title="Click to view brochure" onclick="window.open('assets/pvf-brochure-all-products.pdf','_blank')"></div>
       </div>
     </div>
   </section>
 
+  <a class="wa" href="https://wa.me/911234567890" target="_blank" rel="noopener">Chat on WhatsApp</a>
+
   <footer>
-    <div class="container">
+    <div class="container" style="padding:22px 0;border-top:1px solid rgba(56,189,248,.15);color:#9db4d8">
       © <span id="year"></span> Parashar Vedic Farms • Built with HTML/CSS • Hosted on GitHub Pages
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.12"></script>
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Product filtering
-    const grid=document.getElementById('productGrid');
-    const buttons=document.querySelectorAll('.filters .btn');
-    buttons.forEach(btn=>btn.addEventListener('click',()=>{
-      buttons.forEach(b=>b.setAttribute('aria-pressed','false'));
-      btn.setAttribute('aria-pressed','true');
-      const f=btn.dataset.filter;
-      grid.querySelectorAll('.panel.card').forEach(card=>{
-        const cat=(card.dataset.cat||'').split(' ');
-        card.style.display=(f==='all'||cat.includes(f))?'block':'none';
-      });
-    }));
-    // Simple accordion
-    document.querySelectorAll('.acc-btn').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const item=btn.parentElement;const open=item.classList.toggle('open');
-        btn.setAttribute('aria-expanded',open?'true':'false');
-      });
+    // Init AOS
+    AOS.init({ duration: 1200, once: true });
+
+    // Typed hero text
+    const typed = new Typed('#typedText', {
+      strings: ['Parashar Vedic Farms','Moringa • Herbal Teas • Natural Oils • Dehydrated Fruits & Vegetables'],
+      typeSpeed: 40, backSpeed: 20, backDelay: 1800, loop: true
     });
+
+    // Swiper carousel
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 1,
+      spaceBetween: 14,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      breakpoints: { 720:{slidesPerView:2}, 1024:{slidesPerView:3} }
+    });
+
+    // Stats counters
+    const counters=document.querySelectorAll('.stat .num');
+    const runCounter = (el)=>{ const target=+el.dataset.target; let n=0; const inc=Math.max(1,Math.ceil(target/80)); const tick=()=>{ n+=inc; if(n>=target){ el.textContent=target+(el.textContent.includes('%')?'%':''); } else { el.textContent=n; requestAnimationFrame(tick);} }; tick(); };
+    const io=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ runCounter(e.target); io.unobserve(e.target);} }); });
+    counters.forEach(c=>io.observe(c));
+
+    // FAQ accordion
+    document.querySelectorAll('.acc-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{ const item=btn.parentElement; const open=item.classList.toggle('open'); btn.setAttribute('aria-expanded',open?'true':'false'); });
+    });
+
+    // Reveal brochure side banner on scroll
+    const bro=document.querySelector('.brochure');
+    const ib=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ bro.classList.add('show'); ib.disconnect(); } }); });
+    if(bro) ib.observe(bro);
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
