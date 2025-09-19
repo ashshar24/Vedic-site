@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Parashar Vedic Farms • Moringa & Natural Products</title>
-  <meta name="description" content="Parashar Vedic Farms — SPNF food forest, shade‑dried Moringa products, herbal teas, natural oils, and dehydrated fruits & vegetables." />
+  <meta name="description" content="Parashar Vedic Farms — SPNF food forest bringing you shade‑dried Moringa, herbal teas, natural oils, and dehydrated fruits & vegetables." />
   <meta property="og:title" content="Parashar Vedic Farms • Moringa & Natural Products" />
   <meta property="og:description" content="Explore our shade‑dried Moringa range, herbal teas, natural oils, and dehydrated fruits & vegetables." />
   <meta name="theme-color" content="#0ea5e9" />
@@ -25,7 +25,7 @@
     .menu{display:flex;gap:18px;align-items:center}
     .menu a{font-weight:500;color:var(--mute)}
     .menu a:hover{color:#d9eaff}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(56,189,248,.35);background:rgba(14,165,233,.12);color:#dff3ff}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(56,189,248,.35);background:rgba(14,165,233,.12);color:#dff3ff;cursor:pointer}
     .btn:hover{border-color:rgba(56,189,248,.65)}
     .hero{padding:56px 0 28px}
     .hero .wrap{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
@@ -47,10 +47,26 @@
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
     footer{border-top:1px solid rgba(56,189,248,.15);color:#9db4d8;padding:22px 0;margin-top:20px}
     .pill{display:inline-block;font-size:12px;padding:6px 10px;border:1px solid rgba(56,189,248,.35);border-radius:999px;color:#cfeaff}
-    .brochure{min-height:300px;position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(56,189,248,.2)}
-    .brochure:before{content:"";position:absolute;inset:0;background:url('assets/pvf-brochure.jpg') center/cover no-repeat;opacity:.95}
-    .brochure:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,18,42,.88),rgba(11,18,42,.3))}
-    .brochure > .inner{position:relative;padding:18px}
+
+    /* brochure image (no overlay text) */
+    .brochure{min-height:320px;position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(56,189,248,.2);background:url('assets/pvf-brochure.jpg') center/cover no-repeat}
+    .brochure::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(11,18,42,.25) 50%,transparent)}
+
+    /* product filter buttons */
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 16px}
+    .filters .btn[aria-pressed="true"]{background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.6)}
+
+    /* hover lift */
+    .panel.card{transition:transform .2s ease, box-shadow .2s ease}
+    .panel.card:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,.35)}
+
+    /* accordion */
+    .accordion{border:1px solid rgba(56,189,248,.18);border-radius:12px;overflow:hidden}
+    .acc-item{border-top:1px solid rgba(56,189,248,.12)}
+    .acc-btn{width:100%;text-align:left;padding:14px 16px;background:rgba(255,255,255,.02);border:0;color:#eaf2ff;font-weight:600;cursor:pointer}
+    .acc-panel{display:none;padding:0 16px 14px;color:#b8c7e6}
+    .acc-item.open .acc-panel{display:block}
+
     @media (max-width: 900px){ .hero .wrap{grid-template-columns:1fr} .grid{grid-template-columns:1fr} .two-col{grid-template-columns:1fr} .hero h1{font-size:32px} }
   </style>
 </head>
@@ -62,7 +78,7 @@
         Parashar Vedic Farms <span class="badge">Natural Products</span>
       </a>
       <nav class="menu">
-        <a href="#products">Our Products</a>
+        <a href="#products">Products</a>
         <a href="#benefits">Benefits</a>
         <a href="#farming">Our Farm</a>
         <a href="#puzzles">Puzzles</a>
@@ -76,7 +92,7 @@
       <div>
         <div class="card" style="padding:22px">
           <h1>Natural • Shade‑Dried • Farm‑Fresh</h1>
-          <p>Welcome to <strong>Parashar Vedic Farms</strong> — a SPNF food forest and processing unit in Madhya Pradesh. Discover the <strong>power of Moringa</strong>, our range of <strong>herbal teas</strong>, <strong>natural oils</strong>, and <strong>dehydrated fruits & vegetables</strong> that blend tradition with wellness.</p>
+          <p>Welcome to <strong>Parashar Vedic Farms</strong> — a SPNF food forest and processing unit in Madhya Pradesh. Discover the <strong>power of Moringa</strong>, our <strong>herbal teas</strong>, <strong>natural oils</strong>, and <strong>dehydrated fruits & vegetables</strong> that blend tradition with wellness.</p>
           <div class="chips">
             <span class="chip">Moringa</span>
             <span class="chip">Herbal Teas</span>
@@ -85,16 +101,11 @@
           </div>
           <div class="cta">
             <a class="btn" href="#products">See Our Products</a>
-            <a class="btn" href="#farming">About Our Farm</a>
+            <a class="btn" href="#benefits">See Benefits</a>
           </div>
         </div>
       </div>
-      <aside class="brochure card">
-        <div class="inner">
-          <h3 style="margin:0 0 6px">Brochure Banner</h3>
-          <p style="margin:0;color:#cfe0ff">Upload your brochure image as <code>assets/pvf-brochure.jpg</code>. It will show here as a side advertisement style banner.</p>
-        </div>
-      </aside>
+      <aside class="brochure card" aria-label="Parashar Vedic Farms brochure image"></aside>
     </div>
   </main>
 
@@ -102,8 +113,17 @@
     <div class="container">
       <h2 style="display:flex;align-items:center;gap:12px">Our Products <span class="pill">Farm‑Fresh • SPNF</span></h2>
 
-      <div class="grid">
-        <div class="panel card">
+      <div class="filters" role="toolbar" aria-label="Product filters">
+        <button class="btn" data-filter="all" aria-pressed="true">All</button>
+        <button class="btn" data-filter="moringa">Moringa</button>
+        <button class="btn" data-filter="tea">Teas</button>
+        <button class="btn" data-filter="fruits">Fruits</button>
+        <button class="btn" data-filter="veg">Vegetables</button>
+        <button class="btn" data-filter="oil">Oils</button>
+      </div>
+
+      <div class="grid" id="productGrid">
+        <div class="panel card" data-cat="moringa">
           <h3>Moringa Leaf Powder</h3>
           <p>Rich in vitamins (A, C, E), minerals (calcium, iron, potassium) and polyphenols. Supports immunity, energy, and overall vitality.</p>
           <ul class="list">
@@ -112,7 +132,7 @@
             <li class="item">Processing: Shade‑dried, finely milled, small batch</li>
           </ul>
         </div>
-        <div class="panel card">
+        <div class="panel card" data-cat="oil moringa">
           <h3>Moringa Oil (Cold‑Pressed)</h3>
           <p>High in oleic and behenic acids; naturally rich in tocopherols. Excellent for skin & hair nourishment and light culinary use.</p>
           <ul class="list">
@@ -121,7 +141,7 @@
             <li class="item">Hair: pre‑wash mask or serum for shine</li>
           </ul>
         </div>
-        <div class="panel card">
+        <div class="panel card" data-cat="tea moringa">
           <h3>Moringa Herbal Teas</h3>
           <p>Shade‑dried leaf blends crafted for taste & wellness. Caffeine‑light and soothing.</p>
           <ul class="list">
@@ -130,7 +150,7 @@
             <li class="item">Packs: 50g • 100g</li>
           </ul>
         </div>
-        <div class="panel card">
+        <div class="panel card" data-cat="fruits">
           <h3>Dehydrated Fruits</h3>
           <p>Naturally dehydrated, no added sugar. Nutrient‑dense snacks.</p>
           <ul class="list">
@@ -139,7 +159,7 @@
             <li class="item">Banana chips — Potassium</li>
           </ul>
         </div>
-        <div class="panel card">
+        <div class="panel card" data-cat="veg">
           <h3>Dehydrated Vegetables</h3>
           <p>Convenient, flavourful cooking essentials that retain nutrition.</p>
           <ul class="list">
@@ -150,22 +170,12 @@
         </div>
       </div>
 
-      <div class="panel card" style="margin-top:20px;display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:center">
-        <div>
-          <h3>Why Shade‑Dried?</h3>
-          <p>Shade‑drying better preserves colour, aroma and polyphenols compared to high‑heat drying, while remaining practical and energy‑efficient for small farms.</p>
-          <div class="chips">
-            <span class="chip">Nutrient retention</span>
-            <span class="chip">Clean taste</span>
-            <span class="chip">Small‑batch quality</span>
-          </div>
-        </div>
-        <aside class="brochure">
-          <div class="inner">
-            <h3 style="margin:0 0 6px">Parashar Vedic Farms</h3>
-            <p style="margin:0;color:#cfe0ff">Upload your brochure artwork as <code>assets/pvf-brochure.jpg</code> for a side‑banner look.</p>
-          </div>
-        </aside>
+      <div class="panel card" style="margin-top:20px">
+        <h3>Why Choose Parashar Vedic Farms?</h3>
+        <p>✔ Shade‑drying retains nutrients & natural aroma<br>
+           ✔ SPNF methods ensure chemical‑free produce<br>
+           ✔ Inspired by Ayurveda, aligned with modern nutrition research<br>
+           ✔ Sustainable, farmer‑friendly, and eco‑conscious</p>
       </div>
     </div>
   </section>
@@ -191,9 +201,19 @@
           </ul>
         </div>
       </div>
-      <div class="panel card" style="margin-top:16px">
-        <h3>Drying & Quality</h3>
-        <p>Gentle, low‑heat drying helps retain phenolics and colour. We use cleaned racks and small‑batch milling to keep aroma and potency intact.</p>
+      <div class="accordion" style="margin-top:16px">
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false">How do we dry and process?</button>
+          <div class="acc-panel"><p>Gentle, low‑heat shade drying on cleaned racks; de‑stemmed, milled in small batches, and sealed quickly to retain colour and aroma.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false">Any additives or colours?</button>
+          <div class="acc-panel"><p>No. Our products are additive‑free, colour‑free, and made from whole leaves or fruits/vegetables.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false">Suggested daily intake</button>
+          <div class="acc-panel"><p>Adults: ~1 tsp leaf powder per day with meals; teas 1–2 cups/day as preferred. Always consult a professional for specific medical conditions.</p></div>
+        </div>
       </div>
       <div class="panel card" style="margin-top:16px">
         <h3>Research & Sources</h3>
@@ -279,6 +299,27 @@
     </div>
   </footer>
 
-  <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Product filtering
+    const grid=document.getElementById('productGrid');
+    const buttons=document.querySelectorAll('.filters .btn');
+    buttons.forEach(btn=>btn.addEventListener('click',()=>{
+      buttons.forEach(b=>b.setAttribute('aria-pressed','false'));
+      btn.setAttribute('aria-pressed','true');
+      const f=btn.dataset.filter;
+      grid.querySelectorAll('.panel.card').forEach(card=>{
+        const cat=(card.dataset.cat||'').split(' ');
+        card.style.display=(f==='all'||cat.includes(f))?'block':'none';
+      });
+    }));
+    // Simple accordion
+    document.querySelectorAll('.acc-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.parentElement;const open=item.classList.toggle('open');
+        btn.setAttribute('aria-expanded',open?'true':'false');
+      });
+    });
+  </script>
 </body>
 </html>
