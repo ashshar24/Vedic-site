@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ashish Sharma • DevOps | Farming | Puzzles</title>
-  <meta name="description" content="Ashish Sharma — DevOps engineer, Parashar Vedic Farms, DevOps syllabus, Moringa products, and printable logic puzzles." />
-  <meta property="og:title" content="Ashish Sharma • DevOps | Farming | Puzzles" />
-  <meta property="og:description" content="DevOps portfolio & syllabus, SPNF farming notes with Moringa products, and free printable puzzles." />
+  <title>Parashar Vedic Farms • Moringa & Natural Products</title>
+  <meta name="description" content="Parashar Vedic Farms — SPNF food forest, shade‑dried Moringa products, herbal teas, natural oils, and dehydrated fruits & vegetables." />
+  <meta property="og:title" content="Parashar Vedic Farms • Moringa & Natural Products" />
+  <meta property="og:description" content="Explore our shade‑dried Moringa range, herbal teas, natural oils, and dehydrated fruits & vegetables." />
   <meta name="theme-color" content="#0ea5e9" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
     .menu a:hover{color:#d9eaff}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(56,189,248,.35);background:rgba(14,165,233,.12);color:#dff3ff}
     .btn:hover{border-color:rgba(56,189,248,.65)}
-    .hero{padding:72px 0 48px}
+    .hero{padding:56px 0 28px}
     .hero .wrap{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
     .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(56,189,248,.16);border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
     .hero h1{font-size:40px;line-height:1.15;margin:0 0 10px}
@@ -47,6 +47,10 @@
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
     footer{border-top:1px solid rgba(56,189,248,.15);color:#9db4d8;padding:22px 0;margin-top:20px}
     .pill{display:inline-block;font-size:12px;padding:6px 10px;border:1px solid rgba(56,189,248,.35);border-radius:999px;color:#cfeaff}
+    .brochure{min-height:300px;position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(56,189,248,.2)}
+    .brochure:before{content:"";position:absolute;inset:0;background:url('assets/pvf-brochure.jpg') center/cover no-repeat;opacity:.95}
+    .brochure:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,18,42,.88),rgba(11,18,42,.3))}
+    .brochure > .inner{position:relative;padding:18px}
     @media (max-width: 900px){ .hero .wrap{grid-template-columns:1fr} .grid{grid-template-columns:1fr} .two-col{grid-template-columns:1fr} .hero h1{font-size:32px} }
   </style>
 </head>
@@ -55,15 +59,13 @@
     <div class="container nav">
       <a class="logo" href="#home" aria-label="home">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="#38bdf8" stroke-width="1.4"/><path d="M12 7l4 2.2v5.6L12 17l-4-2.2V9.2L12 7z" fill="#38bdf8" opacity=".2"/></svg>
-        Ashish Sharma <span class="badge">GitHub Pages</span>
+        Parashar Vedic Farms <span class="badge">Natural Products</span>
       </a>
       <nav class="menu">
-        <a href="#projects">Projects</a>
-        <a href="#devops">DevOps Syllabus</a>
-        <a href="#farming">Farming</a>
-        <a href="#products">Moringa</a>
+        <a href="#products">Our Products</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#farming">Our Farm</a>
         <a href="#puzzles">Puzzles</a>
-        <a href="#blog">Blog</a>
         <a class="btn" href="#contact">Contact</a>
       </nav>
     </div>
@@ -73,201 +75,155 @@
     <div class="container wrap">
       <div>
         <div class="card" style="padding:22px">
-          <h1>DevOps Engineer • SPNF Farmer • Maker</h1>
-          <p>Hi, I’m <strong>Ashish</strong>. I build test automation & cloud/devops pipelines, grow <em>Parashar Vedic Farms</em>, and share printable puzzles. This site now includes my <strong>DevOps course syllabus</strong>, <strong>Moringa product lineup</strong>, and <strong>free puzzle links</strong>.</p>
+          <h1>Natural • Shade‑Dried • Farm‑Fresh</h1>
+          <p>Welcome to <strong>Parashar Vedic Farms</strong> — a SPNF food forest and processing unit in Madhya Pradesh. Discover the <strong>power of Moringa</strong>, our range of <strong>herbal teas</strong>, <strong>natural oils</strong>, and <strong>dehydrated fruits & vegetables</strong> that blend tradition with wellness.</p>
           <div class="chips">
-            <span class="chip">Jenkins • Python • AWS</span>
-            <span class="chip">SPNF • Food Forest</span>
-            <span class="chip">Printable Puzzles</span>
+            <span class="chip">Moringa</span>
+            <span class="chip">Herbal Teas</span>
+            <span class="chip">Natural Oils</span>
+            <span class="chip">Dehydrated Fruits & Veggies</span>
           </div>
           <div class="cta">
-            <a class="btn" href="#devops">View DevOps Syllabus</a>
-            <a class="btn" href="#products">See Moringa Products</a>
+            <a class="btn" href="#products">See Our Products</a>
+            <a class="btn" href="#farming">About Our Farm</a>
           </div>
         </div>
       </div>
-      <div>
-        <div class="card panel">
-          <h3>Quick Links</h3>
-          <p>Replace placeholders with your real profiles.</p>
-          <div class="list" style="margin-top:10px">
-            <a class="item" href="#" target="_blank" rel="noopener">GitHub Profile</a>
-            <a class="item" href="#" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="item" href="#products" rel="noopener">Parashar Vedic Farms • Moringa</a>
-          </div>
+      <aside class="brochure card">
+        <div class="inner">
+          <h3 style="margin:0 0 6px">Brochure Banner</h3>
+          <p style="margin:0;color:#cfe0ff">Upload your brochure image as <code>assets/pvf-brochure.jpg</code>. It will show here as a side advertisement style banner.</p>
         </div>
-      </div>
+      </aside>
     </div>
   </main>
 
-  <section id="projects">
+  <section id="products">
     <div class="container">
-      <h2>Featured Projects</h2>
+      <h2 style="display:flex;align-items:center;gap:12px">Our Products <span class="pill">Farm‑Fresh • SPNF</span></h2>
+
       <div class="grid">
         <div class="panel card">
-          <h3>CI/CD for EOLT (Demo)</h3>
-          <p>Pipeline that builds, tests, and reports for Telematics ECU. Includes artifact versioning, notifications, and dashboards.</p>
-          <span class="tag">Jenkins • Python • TestStand</span>
+          <h3>Moringa Leaf Powder</h3>
+          <p>Rich in vitamins (A, C, E), minerals (calcium, iron, potassium) and polyphenols. Supports immunity, energy, and overall vitality.</p>
+          <ul class="list">
+            <li class="item">Packs: 100g • 250g • 500g</li>
+            <li class="item">Use: 1 tsp/day for adults; add to smoothies, rotis, soups</li>
+            <li class="item">Processing: Shade‑dried, finely milled, small batch</li>
+          </ul>
         </div>
         <div class="panel card">
-          <h3>Infra as Code (Demo)</h3>
-          <p>Reusable Terraform modules for VPC, EKS, and CloudWatch alarms with sane defaults for small teams.</p>
-          <span class="tag">Terraform • AWS</span>
+          <h3>Moringa Oil (Cold‑Pressed)</h3>
+          <p>High in oleic and behenic acids; naturally rich in tocopherols. Excellent for skin & hair nourishment and light culinary use.</p>
+          <ul class="list">
+            <li class="item">Sizes: 30ml • 100ml</li>
+            <li class="item">Skin: moisturizes, supports barrier, absorbs fast</li>
+            <li class="item">Hair: pre‑wash mask or serum for shine</li>
+          </ul>
         </div>
         <div class="panel card">
-          <h3>Content Engine (Demo)</h3>
-          <p>Automates topic discovery and TTS rendering for educational shorts. Configurable locales and schedulers.</p>
-          <span class="tag">Python • TTS • Automation</span>
+          <h3>Moringa Herbal Teas</h3>
+          <p>Shade‑dried leaf blends crafted for taste & wellness. Caffeine‑light and soothing.</p>
+          <ul class="list">
+            <li class="item">Flavours: Tulsi Calm • Ginger Zest • Lemongrass Fresh • Hibiscus Glow</li>
+            <li class="item">Brew: 3–4 min @ 90°C; enjoy plain or with honey</li>
+            <li class="item">Packs: 50g • 100g</li>
+          </ul>
         </div>
+        <div class="panel card">
+          <h3>Dehydrated Fruits</h3>
+          <p>Naturally dehydrated, no added sugar. Nutrient‑dense snacks.</p>
+          <ul class="list">
+            <li class="item">Mango slices — Vitamin A & carotenoids</li>
+            <li class="item">Kiwi chips — Vitamin C</li>
+            <li class="item">Banana chips — Potassium</li>
+          </ul>
+        </div>
+        <div class="panel card">
+          <h3>Dehydrated Vegetables</h3>
+          <p>Convenient, flavourful cooking essentials that retain nutrition.</p>
+          <ul class="list">
+            <li class="item">Tomato flakes — Lycopene rich</li>
+            <li class="item">Garlic & Onion powders — Aroma & immunity support</li>
+            <li class="item">Spinach crisps — Iron & folate</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel card" style="margin-top:20px;display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:center">
+        <div>
+          <h3>Why Shade‑Dried?</h3>
+          <p>Shade‑drying better preserves colour, aroma and polyphenols compared to high‑heat drying, while remaining practical and energy‑efficient for small farms.</p>
+          <div class="chips">
+            <span class="chip">Nutrient retention</span>
+            <span class="chip">Clean taste</span>
+            <span class="chip">Small‑batch quality</span>
+          </div>
+        </div>
+        <aside class="brochure">
+          <div class="inner">
+            <h3 style="margin:0 0 6px">Parashar Vedic Farms</h3>
+            <p style="margin:0;color:#cfe0ff">Upload your brochure artwork as <code>assets/pvf-brochure.jpg</code> for a side‑banner look.</p>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
 
-  <section id="devops">
+  <section id="benefits">
     <div class="container">
-      <h2>DevOps Course Syllabus (Scaler‑style)</h2>
-      <p style="color:#9fb2d6;margin:6px 0 16px">A structured path from fundamentals to advanced topics with projects and interview prep.</p>
+      <h2>Moringa Benefits (At a Glance)</h2>
       <div class="two-col">
         <div class="panel card">
-          <h3>Phase 1: Foundations</h3>
+          <h3>Moringa Leaves</h3>
           <ul class="list">
-            <li class="item">Linux & Shell: files, permissions, networking tools, bash scripting</li>
-            <li class="item">Git & GitHub: branching, PRs, workflows, semantic commits</li>
-            <li class="item">Python for DevOps: venv, requests, subprocess, logging, CLI tools</li>
-            <li class="item">Networking Basics: TCP/IP, DNS, HTTP, SSL/TLS</li>
+            <li class="item">Nutrient‑dense: protein, calcium, iron, potassium, vitamins A/C/E</li>
+            <li class="item">Antioxidants: polyphenols & flavonoids support oxidative balance</li>
+            <li class="item">Daily use: 1 tsp powder can enrich common foods</li>
           </ul>
-          <span class="pill">Duration: 3–4 weeks</span>
         </div>
         <div class="panel card">
-          <h3>Phase 2: CI/CD</h3>
+          <h3>Moringa Oil</h3>
           <ul class="list">
-            <li class="item">Jenkins pipelines (declarative), agents, artifacts, credentials</li>
-            <li class="item">GitHub Actions basics & reusable workflows</li>
-            <li class="item">Testing & Quality: unit, coverage, SAST (CodeQL) basics</li>
-            <li class="item">Release strategies: blue‑green, canary, feature flags</li>
+            <li class="item">High oleic acid: excellent skin emollient & barrier support</li>
+            <li class="item">Tocopherols & sterols: antioxidant activity for skin/hair</li>
+            <li class="item">Light cooking oil with pleasant, nutty notes</li>
           </ul>
-          <span class="pill">Duration: 3 weeks</span>
-        </div>
-        <div class="panel card">
-          <h3>Phase 3: Containers & Orchestration</h3>
-          <ul class="list">
-            <li class="item">Dockerfiles, multi‑stage builds, image scanning</li>
-            <li class="item">Docker Compose for local stacks</li>
-            <li class="item">Kubernetes: pods, services, deployments, ingress</li>
-            <li class="item">Helm charts & Kustomize basics</li>
-          </ul>
-          <span class="pill">Duration: 4 weeks</span>
-        </div>
-        <div class="panel card">
-          <h3>Phase 4: Cloud (AWS)</h3>
-          <ul class="list">
-            <li class="item">IAM, VPC, EC2, S3, RDS, CloudWatch</li>
-            <li class="item">EKS & ECS overview, ALB/NLB</li>
-            <li class="item">Cost awareness & tagging</li>
-          </ul>
-          <span class="pill">Duration: 3 weeks</span>
-        </div>
-        <div class="panel card">
-          <h3>Phase 5: IaC & Config</h3>
-          <ul class="list">
-            <li class="item">Terraform: state, modules, workspaces</li>
-            <li class="item">Ansible: inventories, roles, idempotence</li>
-            <li class="item">Packer (optional) for golden images</li>
-          </ul>
-          <span class="pill">Duration: 3 weeks</span>
-        </div>
-        <div class="panel card">
-          <h3>Phase 6: Observability & SRE</h3>
-          <ul class="list">
-            <li class="item">Prometheus, Grafana, Alertmanager</li>
-            <li class="item">Logs: ELK/Opensearch basics</li>
-            <li class="item">SLO/SLI, error budgets, runbooks</li>
-          </ul>
-          <span class="pill">Duration: 2–3 weeks</span>
-        </div>
-        <div class="panel card">
-          <h3>Phase 7: Security (DevSecOps)</h3>
-          <ul class="list">
-            <li class="item">Secrets mgmt, least privilege, IAM policies</li>
-            <li class="item">Image & dependency scanning, SBOM</li>
-            <li class="item">Compliance basics (SOC2/GDPR concepts)</li>
-          </ul>
-          <span class="pill">Duration: 2 weeks</span>
-        </div>
-        <div class="panel card">
-          <h3>Phase 8: Projects & Interview</h3>
-          <ul class="list">
-            <li class="item">Capstone: microservice on EKS with CI/CD, IaC, monitoring</li>
-            <li class="item">Resume & STAR answers, mock interviews</li>
-            <li class="item">System design for DevOps</li>
-          </ul>
-          <span class="pill">Duration: 2 weeks</span>
         </div>
       </div>
-      <div class="cta" style="margin-top:16px">
-        <a class="btn" href="assets/devops-syllabus.pdf" download>Download Syllabus (PDF)</a>
-        <a class="btn" href="#projects">See Sample Projects</a>
+      <div class="panel card" style="margin-top:16px">
+        <h3>Drying & Quality</h3>
+        <p>Gentle, low‑heat drying helps retain phenolics and colour. We use cleaned racks and small‑batch milling to keep aroma and potency intact.</p>
       </div>
-      <p style="color:#9fb2d6;margin-top:8px">Tip: add <code>assets/devops-syllabus.pdf</code> to your repo to enable the download.</p>
+      <div class="panel card" style="margin-top:16px">
+        <h3>Research & Sources</h3>
+        <p>Explore detailed reviews and studies on moringa nutrition, oil composition, and drying effects:</p>
+        <ul class="list">
+          <li class="item"><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8373516/">Comprehensive review of Moringa nutrients (2021)</a></li>
+          <li class="item"><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9030530/">Nutritional & antioxidant properties (2022)</a></li>
+          <li class="item"><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5187941/">Seed oil composition and uses (2016)</a></li>
+          <li class="item"><a target="_blank" rel="noopener" href="https://www.fao.org/family-farming/detail/en/c/1644586/">FAO overview on moringa potential (FAO)</a></li>
+          <li class="item"><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6261129/">Drying alters phenolics & antioxidants (2018)</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section id="farming">
     <div class="container">
-      <h2>Parashar Vedic Farms</h2>
+      <h2>Our Farm (SPNF • Vidisha)</h2>
       <div class="two-col">
         <div class="panel card">
           <h3>SPNF 5‑Layer Model</h3>
-          <p>Notes, planting calendars, and cost sheets for our Vidisha farm. Focus on Moringa, Banana, and pepper vines.</p>
+          <p>Food forest with Moringa, Banana, pepper vines & intercrops. Water‑wise, chemical‑free, biodiversity‑friendly.</p>
           <div class="cta"><a class="btn" href="#" download>Download Farm Plan.pdf</a></div>
         </div>
         <div class="panel card">
           <h3>Processing</h3>
-          <p>Shade‑dried Moringa & banana powder SOPs with dryer load plans and QC checklists.</p>
+          <p>Shade‑drying SOPs, hygiene protocols, dryer load plans, and QC checklists for consistent quality.</p>
           <span class="tag">Docs • SOP • QC</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="products">
-    <div class="container">
-      <h2>Moringa Products (Planned)</h2>
-      <div class="grid">
-        <div class="panel card">
-          <h3>Moringa Leaf Powder</h3>
-          <p>Fine, shade‑dried leaf powder. Packs: 100g, 250g, 500g.</p>
-          <div class="cta">
-            <a class="btn" href="#" download>Specs & Nutrition (PDF)</a>
-            <span class="tag">Immunity • Iron • Antioxidants</span>
-          </div>
-        </div>
-        <div class="panel card">
-          <h3>Moringa Capsules</h3>
-          <p>500mg vegetarian capsules made from pure leaf powder. Bottle: 60/120 caps.</p>
-          <div class="cta">
-            <a class="btn" href="#" download>COA & SOP (PDF)</a>
-            <span class="tag">Veg • Additive‑free</span>
-          </div>
-        </div>
-        <div class="panel card">
-          <h3>Moringa Tea Mix</h3>
-          <p>Leaf blend with tulsi/lemongrass for a gentle, daily wellness tea.</p>
-          <div class="cta">
-            <a class="btn" href="#" download>Brew Guide (PDF)</a>
-            <span class="tag">Caffeine‑light</span>
-          </div>
-        </div>
-        <div class="panel card">
-          <h3>Moringa Seed Oil (Cold‑pressed)</h3>
-          <p>High‑stability oil for culinary & cosmetic use. Sizes: 30ml, 100ml.</p>
-          <div class="cta">
-            <a class="btn" href="#" download>Quality & Uses (PDF)</a>
-            <span class="tag">Omega‑rich</span>
-          </div>
-        </div>
-      </div>
-      <p style="color:#9fb2d6;margin-top:10px">Add PDFs to <code>assets/</code> and replace <em>#</em> links with file paths when ready.</p>
     </div>
   </section>
 
@@ -293,19 +249,6 @@
         <a class="item" target="_blank" rel="noopener" href="https://www.k5learning.com/free-math-worksheets">K5 Learning (math & reading)</a>
         <a class="item" target="_blank" rel="noopener" href="https://puzzlemix.com/printables">Puzzlemix (assorted printables)</a>
       </div>
-      <p style="color:#9fb2d6;margin-top:10px">Tip: curate your favourite links here; add your own PDFs to <code>assets/</code>.</p>
-    </div>
-  </section>
-
-  <section id="blog">
-    <div class="container">
-      <h2>Blog</h2>
-      <div class="list">
-        <div class="item">[Sample] Zero‑Downtime Deployments with Blue‑Green on AWS</div>
-        <div class="item">[Sample] SPNF: 5‑Layer Food Forest in 20 Minutes</div>
-        <div class="item">[Sample] How We Design Printable Puzzles Kids Love</div>
-      </div>
-      <p style="color:#9fb2d6;margin-top:10px">You can later move the blog to <code>/blog/</code> posts or Jekyll if needed.</p>
     </div>
   </section>
 
@@ -314,17 +257,17 @@
       <h2>Contact</h2>
       <div class="two-col">
         <form class="panel card" style="display:grid;gap:10px" action="mailto:your.email@example.com" method="post" enctype="text/plain">
-          <h3>Write me</h3>
-          <input aria-label="Your name" name="name" placeholder="Your name" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
-          <input aria-label="Your email" name="email" placeholder="Your email" type="email" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
-          <textarea aria-label="Message" name="message" placeholder="Message" rows="4" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff"></textarea>
+          <h3>Write us</h3>
+          <input aria-label="Your name" name="name" placeholder="Your name" maxlength="60" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
+          <input aria-label="Your email" name="email" placeholder="Your email" type="email" maxlength="120" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff">
+          <textarea aria-label="Message" name="message" placeholder="Message" rows="4" maxlength="800" required style="padding:12px;border-radius:10px;border:1px solid rgba(56,189,248,.35);background:#0b122a;color:#eaf2ff"></textarea>
           <button class="btn" type="submit">Send</button>
           <p style="color:#9fb2d6;font-size:12px;margin:0">Uses your default email app. Replace the <code>mailto:</code> with a form service later if you want.</p>
         </form>
         <div class="panel card">
           <h3>About</h3>
-          <p>I’m based in Germany, working in DevOps/Test Automation and building an SPNF farm in Madhya Pradesh. I share practical templates and printable learning material here.</p>
-          <span class="tag">Based in Frankfurt area</span>
+          <p>We’re based in Germany and building an SPNF farm in Madhya Pradesh. Sharing Moringa products, farm learnings, and educational freebies.</p>
+          <span class="tag">Parashar Vedic Farms</span>
         </div>
       </div>
     </div>
@@ -332,7 +275,7 @@
 
   <footer>
     <div class="container">
-      © <span id="year"></span> Ashish Sharma • Built with HTML/CSS • Hosted on GitHub Pages
+      © <span id="year"></span> Parashar Vedic Farms • Built with HTML/CSS • Hosted on GitHub Pages
     </div>
   </footer>
 
